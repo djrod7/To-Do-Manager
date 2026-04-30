@@ -1,0 +1,34 @@
+
+todo = ["Buy grocieres", "Finish homework", "Call the dentist"]
+
+
+print("=" * 30)
+print("        My To-Do List")
+print("=" * 30)
+
+for i in range(len(todo)):
+    print(f"{i + 1}. {todo[i]}")
+
+print(f"\nTotal tasks: {len(todo)}")
+
+question = input("\nWhat would you like to do? \n1. Add a task \n2. Remove a task \nYour answer: ")
+
+if question == "1":
+    new_task = input("Enter the new task: ")
+    todo.append(new_task)
+elif question == "2":
+    task_to_remove = int(input("Enter the task number to remove: "))
+    if 1 <= task_to_remove <= len(todo):
+        todo.pop(task_to_remove - 1)
+    else:
+        print("Invalid task number.")
+
+print("=" * 30)
+print("        Updated List")
+print("=" * 30)
+
+for i in range(len(todo)):
+    print(f"{i + 1}. {todo[i]}")
+
+print(f"\nTotal tasks: {len(todo)}")
+
